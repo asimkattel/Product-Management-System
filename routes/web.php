@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,5 @@ Route::post('/edit_project/{id}', [ProductController::class, "editstore"]);
 
 Route::get('/delete_project/{id}',[ProductController::class, "destroy"]);
 
+Route::get('/add_employee', [EmployeeController::class, "view"]);
+Route::post('/add_employee', [EmployeeController::class, "store"]);

@@ -13,9 +13,10 @@
         <div class="flex justify-center">
             <div class="w-4/12 mt-20 bg-gray-200 p-10 rounded-lg">
                 <div>
-                    <p class=" text-center"> Project name
+                    <p class=" text-center">
+                        Project name
                     </p>
-                    <input  type="string" name="name" class="bg-gray-100 border-1 w-full p-2 rounded-lg mt-2 " placeholder="Enter Project name">
+                    <input required type="string" name="name" class="bg-gray-100 border-1 w-full p-2 rounded-lg mt-2 " placeholder="Enter Project name">
 
                     @error("name")
                     <div>
@@ -41,7 +42,7 @@
                     </p> <input required type="number" name="duration" class="bg-gray-100 border-1 w-full p-2 rounded-lg mt-2 " placeholder="Enter the duration of Project ">
                     @error("duration")
                     <div>
-                    {{$message}}
+                        {{$message}}
                     </div>
 
                     @enderror
