@@ -28,3 +28,11 @@ Route::get('/delete_project/{id}',[ProductController::class, "destroy"]);
 
 Route::get('/add_employee', [EmployeeController::class, "view"]);
 Route::post('/add_employee', [EmployeeController::class, "store"]);
+
+Route::get('/list_employee', [EmployeeController::class, "show"]);
+
+Route::get('/edit_employee/{id}', [EmployeeController::class, "edit"]);
+Route::post('/edit_employee/{id}', [EmployeeController::class, "editstore"]);
+
+Route::get('/delete_employee/{id}',[EmployeeController::class, "destroy"]);
+

@@ -20,7 +20,7 @@ class ProductController extends Controller
             'cost' => 'required|integer|min:0',
             'duration' => 'required|integer|min:1'
         ]);
-
+//saving in DB
         $project = new Project();
         $project->name = $request->name;
         $project->cost = $request->cost;
