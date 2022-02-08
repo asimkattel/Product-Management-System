@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,7 @@ Route::post('/edit_employee/{id}', [EmployeeController::class, "editstore"]);
 
 Route::get('/delete_employee/{id}',[EmployeeController::class, "destroy"]);
 
+Route::get('/list_task', [TaskController::class, "index"]);
+
+Route::get('/add_task', [TaskController::class, "view"]);
+Route::post('/add_task', [TaskController::class, "store"]);
