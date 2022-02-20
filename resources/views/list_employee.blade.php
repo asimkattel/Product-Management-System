@@ -8,6 +8,8 @@
 </head>
 
 <body>
+@include("nav")
+
     <div class="flex justify-center">
         <div class="w-11/12 mt-10  p-10 rounded-lg">
             <div class="flex">
@@ -15,19 +17,7 @@
                     <p class=" text-3xl"> Employee Lists</p>
                 </div>
 
-                <div class="flex justify-end mt-1 mb-2">
-                    <a href="/" class="bg-purple-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        Home
-                    </a>
-                    &nbsp;&nbsp;
-                    <a href="/add_employee" class="bg-red-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        Add Employee
-                    </a>
-                    &nbsp;&nbsp;
-                    <a href="/add_project" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        Add Project
-                    </a>
-                </div>
+                
             </div>
             <div class="h-0.5 w-full bg-gray-800" />
             <div class="flex flex-col">

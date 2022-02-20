@@ -6,13 +6,7 @@
 </head>
 
 <body>
-
-    <div class="w-full bg-red-600 p-8 ">
-        <p class="text-center text-4xl	font-bold	text-white">Welcome to Project Manager</p>
-    </div>
-
-
-    
+@include("nav")
 
     <div class="flex justify-center">
         <div class="w-11/12 mt-10  p-10 rounded-lg">
@@ -21,27 +15,6 @@
                     <p class=" text-3xl"> Project Lists</p>
                 </div>
 
-                <div class="flex justify-end mt-1 mb-2">
-                    <a href="/add_project" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        Add Project
-                    </a>
-                    &nbsp;&nbsp;
-                    <a href="/add_employee" class="bg-red-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        Add Employee
-                    </a>
-                    &nbsp;&nbsp;
-                    <a href="/list_employee" class="bg-purple-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        Employee List
-                    </a>
-                    &nbsp;&nbsp;
-                    <a href="/list_task" class="bg-gray-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        Task List
-                    </a>
-                    &nbsp;&nbsp;
-                    <a href="/add_task" class="bg-yellow-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                   Add task
-                    </a>
-                </div>
 
             </div>
             <div class="h-0.5 w-full bg-gray-800" />

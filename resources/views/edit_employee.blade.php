@@ -9,6 +9,8 @@
 
 <body>
     <form method="POST">
+    @include("nav")
+
         @csrf
         <div class="flex justify-center">
             <div class="w-4/12 rounded-lg p-8 mt-20 bg-gray-400">

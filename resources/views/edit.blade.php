@@ -8,6 +8,8 @@
 </head>
 
 <body>
+@include("nav")
+
 
     <form method="POST">
         @csrf
