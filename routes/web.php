@@ -41,3 +41,9 @@ Route::get('/list_task', [TaskController::class, "index"]);
 
 Route::get('/add_task', [TaskController::class, "view"]);
 Route::post('/add_task', [TaskController::class, "store"]);
+
+Route::get('/edit_task/{id}', [TaskController::class, "edit"]);
+Route::post('/edit_task/{id}', [TaskController::class, "editstore"]);
+
+Route::get('/delete_task/{id}',[TaskController::class, "destroy"]);
+

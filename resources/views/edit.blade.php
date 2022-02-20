@@ -15,7 +15,7 @@
             <div class="w-4/12 mt-20 bg-gray-200 p-10 rounded-lg">
                 <div>
                     <p class="text-center"> Project name
-                    </p> <input value="{{$project->name}}" type="string" name="name" class="bg-gray-100 border-1 w-full p-2 rounded-lg mt-2 " placeholder="enter the name of project">
+                    </p> <input required value="{{$project->name}}" type="string" name="name" class="bg-gray-100 border-1 w-full p-2 rounded-lg mt-2 " placeholder="enter the name of project">
                     @error("name")
                     <div>
                         enter name
@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <p  class="text-center mt-4"> Project cost in Rs.
-                    </p> <input value="{{$project->cost}}" type="number" name="cost" class="bg-gray-100 border-1 w-full p-2 rounded-lg mt-2 " placeholder="enter the cost of project">
+                    </p> <input  required value="{{$project->cost}}" type="number" name="cost" class="bg-gray-100 border-1 w-full p-2 rounded-lg mt-2 " placeholder="enter the cost of project">
                     @error("cost")
                     <div>
                         {{$message}}
@@ -37,7 +37,7 @@
                 </div>
                 <div>
                     <p  class="text-center mt-4"> Project duration in days
-                    </p> <input value="{{$project->duration}}" type="string" name="duration" class="bg-gray-100 border-1 w-full p-2 rounded-lg mt-2 "  placeholder="enter the duration of project">
+                    </p> <input  required value="{{$project->duration}}" type="string" name="duration" class="bg-gray-100 border-1 w-full p-2 rounded-lg mt-2 "  placeholder="enter the duration of project">
                     @error("duration")
                     <div>
                         enter duration

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Models\Project;
 use App\Models\Task;
+use DateInterval;
+use DateTime;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -21,11 +23,12 @@ class TaskController extends Controller
         if ($page == null) $page = 1;
         $page = ($page - 1) * 5 + 1;
 
+       
 
         $data = Task::join("employees", "tasks.employee_id", "=", "employees.id")
             ->join("projects", "tasks.project_id", "=", "projects.id")
-            ->select("employees.ename", "projects.name", "tasks.date", "employees.salary")
-            ->get();
+            ->select("employees.ename", "projects.name", "tasks.date", "employees.salary","tasks.id")
+            ->paginate(5);
 
         return view('list_task', [
             'data' => $data,
@@ -38,6 +41,7 @@ class TaskController extends Controller
     {
         $data = Employee::all();
         $projects = Project::all();
+        
         return view('add_task', [
             'data' => $data,
             'projects' => $projects
@@ -67,37 +71,41 @@ class TaskController extends Controller
         return redirect('/list_task');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function edit($id)
     {
-        //
+        $task = Task::where(['id' => $id])->first();
+      
+        $data = Employee::all();
+        $projects = Project::all();
+        return view('edit_task', [
+            'task' => $task,
+            'data'=>$data,
+            'projects'=>$projects,
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function editstore(Request $request, $id)
     {
-        //
-    }
+        $request->validate([
+            'eid' => 'required',
+            'pid' => 'required',
+            'date' => 'required'
+        ]);
+        $task=Task::where(['id' => $id])->first();
+        $task->employee_id = $request->eid;
+        $task->project_id = $request->pid;
+        $task->date = $request->date;
+        $task->save();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+        return redirect('/list_task');
+ 
+    }
+    
+    
+    public function destroy(Request $request, $id)
     {
-        //
+        $task = Task::where(['id' => $id])->first();
+        $task->delete();
+        return redirect('/list_task');
     }
 }
